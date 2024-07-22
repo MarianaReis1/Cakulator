@@ -20,13 +20,31 @@ Cakulator is a Nuxt.js application designed to help users save cake recipes and 
 ## Technologies Used
 
 - **Nuxt.js**: The framework for building the application.
+  - My experience: Although I don't have much experience with Nuxt, working with it was a pleasure. It offers a lot of advanced features compared to Next.js, making it a powerful tool for server-side rendered applications.
 - **Quasar**: For pre-defined components and rich feature set.
+  - My experience: This was my first time using Quasar components. I found them to be highly versatile and feature-rich, which greatly accelerated the development process. Although it was trick to integrate it with Vitest initially.
 - **Tailwind CSS**: For creating bespoke designs quickly and simply.
+  - My experience: I am well-versed in Tailwind CSS and absolutely love working with it. It allows for rapid , bespoke and responsive design without writing much custom CSS.
 - **TypeScript**: For type safety and enhanced development experience.
+  - My experience: I have worked with TypeScript before and enjoy using it. It enhances the development experience by providing type safety and catching errors early in the development cycle.
 
 ## Testing
 
-In progress
+Our testing strategy includes unit and integration tests to ensure the reliability and functionality of the application. We use a combination of Vue Test Utils and Vitest for our testing framework.
+
+**Tools**
+Vue Test Utils: This library provides utilities to test Vue.js components effectively.
+Vitest: A fast and lightweight test runner and assertion library.
+Current Progress
+We have implemented several tests for our components, ensuring that the core functionalities are well covered. However, there are still some tests to be added in the future to achieve full coverage.
+
+**Challenge**
+Testing certain components, such as dialog content, presented unique challenges. Due to the way these components are set up and rendered (often using Vue's teleport feature), special handling and setup were required to properly test their behavior and interactions.
+
+**Future Work**
+Add more comprehensive tests for dialog interactions and edge cases.
+Continue expanding the test coverage to cover all critical paths and user interactions.
+Refine and improve existing tests to ensure they are robust and reliable.
 
 ## Project Background
 

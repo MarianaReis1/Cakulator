@@ -27,6 +27,9 @@ Cakulator is a Nuxt.js application designed to help users save cake recipes and 
   - My experience: I am well-versed in Tailwind CSS and absolutely love working with it. It allows for rapid , bespoke and responsive design without writing much custom CSS.
 - **TypeScript**: For type safety and enhanced development experience.
   - My experience: I have worked with TypeScript before and enjoy using it. It enhances the development experience by providing type safety and catching errors early in the development cycle.
+- **Canva**: For generating a quick and nice design wireframe.
+  - My experience: I used Canva to generate the wireframe. I found a nice template and modified it according to my taste. Canva made it quick and easy to find a visually appealing template, fonts and images and it was simple to customize it.
+  - Screenshots are available under `~/assets/wireframes`
 
 ## Testing
 

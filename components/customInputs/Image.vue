@@ -15,6 +15,8 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
+
 const emit = defineEmits(["input"]);
 
 const file = ref<File>();

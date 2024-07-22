@@ -12,13 +12,13 @@
     />
     <ul
       v-if="showOptions"
-      class="tw-w-full tw-rounded tw-bg-white tw-border tw-border-gray-300 tw-px-4 tw-py-2 tw-space-y-1 tw-absolute tw-top-10 tw-z-10"
+      class="tw-w-full tw-rounded tw-bg-tertiary tw-border tw-border-tertiary tw-px-4 tw-py-2 tw-space-y-1 tw-absolute tw-top-10 tw-z-10"
     >
       <li
         v-for="ingredient in filteredOptions"
         :key="ingredient.id"
         @click="handleSelectOption(ingredient)"
-        class="tw-cursor-pointer hover:tw-bg-gray-100 tw-p-1"
+        class="tw-cursor-pointer hover:tw-bg-secondary tw-p-1"
       >
         {{ ingredient.name }}
       </li>
@@ -27,6 +27,7 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, ref } from "vue";
 import { type Ingredient } from "~/types";
 
 type AutocompleteProps = {

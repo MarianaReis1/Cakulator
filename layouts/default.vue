@@ -1,6 +1,6 @@
 <template>
   <q-layout>
-    <q-page-container class="tw-bg-secondary tw-text-dark">
+    <q-page-container>
       <slot />
     </q-page-container>
   </q-layout>

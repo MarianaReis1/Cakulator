@@ -4,9 +4,14 @@
   >
 
   <q-dialog v-model="dialogShouldShow" backdrop-filter="blur(4px)">
-    <q-card class="tw-bg-primary" data-testid="add-cake-dialog">
-      <q-card-section class="text-h6 tw-flex tw-justify-between">
-        New Cake
+    <q-card
+      class="tw-bg-primary tw-min-w-[340px]"
+      data-testid="add-cake-dialog"
+    >
+      <q-card-section
+        class="text-h6 tw-flex tw-justify-between tw-font-bold tw-flex-col-reverse sm:tw-flex-row"
+      >
+        <p class="tw-text-center sm:tw-text-left">New Cake Recipe</p>
         <q-btn icon="close" v-close-popup flat size="small"></q-btn>
       </q-card-section>
 
@@ -56,7 +61,7 @@ const initialState: Cake = {
     {
       id: 0,
       name: "",
-      quantity: 0,
+      quantity: null,
       unit: "",
     },
   ],
@@ -70,8 +75,9 @@ const handleUpdateIngredients = (values: Ingredient[]) => {
 };
 
 const handleFormSubmit = async () => {
-  await handleFileUpload(newCake.value.img.file);
-  console.log("handlForm", newCake.value.ingredients);
+  const fileName = await handleFileUpload(newCake.value.img.file);
+  newCake.value.img.fileName = fileName;
+
   emit("newCake", newCake.value);
   closeDialog();
   handleFormReset();

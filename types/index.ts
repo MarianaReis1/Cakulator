@@ -1,7 +1,7 @@
 export type Ingredient = {
     id: number;
     name: string;
-    quantity: number;
+    quantity?: number | null;
     unit?: 'g' | 'ml' | 'l' | 'kg' |'';
 };
 

@@ -9,15 +9,17 @@
       :options="props.options"
       :model-value="item.name"
       :selectedIngredients="ingredients"
-      @update:model-value="(value) => handleIngredientSelect(index, value)"
+      @update:model-value="
+        (value: string) => handleIngredientSelect(index, value)
+      "
     />
     <q-input
       v-model="item.quantity"
       label="Quantity*"
       :rules="[
-        (v) => isRequired(v),
-        (v) => isNumber(v),
-        (v) => isPositiveNumber(v),
+        (v: string) => isRequired(v),
+        (v: number) => isNumber(v),
+        (v: number) => isPositiveNumber(v),
       ]"
       outlined
       dense
@@ -25,7 +27,7 @@
     <q-input
       v-model="item.unit"
       label="Unit"
-      :rules="[(v) => isValidIngredientUnit(v)]"
+      :rules="[(v: string) => isValidIngredientUnit(v)]"
       outlined
       dense
     />
@@ -42,6 +44,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 import { generateTempId } from "~/utils";
 import { type Ingredient } from "~/types";
 
@@ -58,7 +61,7 @@ const ingredients = ref<Ingredient[]>([...props.modelValue]);
 const addIngredient = () => {
   ingredients.value.push({
     name: "",
-    quantity: 0,
+    quantity: null,
     unit: "",
     id: generateTempId(),
   });

@@ -1,11 +1,21 @@
 <template>
-  <UtilsBtnPrimary size="xl" @click="openDialog">Calculator</UtilsBtnPrimary>
+  <UtilsBtnPrimary size="xl" @click="openDialog" data-testid="cakulator"
+    >Cakulator</UtilsBtnPrimary
+  >
 
   <q-dialog v-model="dialogShouldShow" backdrop-filter="blur(4px)">
     <q-card>
-      <q-card-section class="text-h6 tw-flex tw-justify-between tw-font-bold">
-        Your cakulation is ready!
-        <q-btn icon="close" v-close-popup flat size="small"></q-btn>
+      <q-card-section
+        class="text-h6 tw-flex tw-justify-between tw-font-bold tw-flex-col-reverse sm:tw-flex-row"
+      >
+        <p class="tw-text-center sm:tw-text-left">Your cakulation is ready!</p>
+        <q-btn
+          icon="close"
+          v-close-popup
+          flat
+          size="small"
+          data-testid="close"
+        ></q-btn>
       </q-card-section>
 
       <q-card-section>
@@ -31,6 +41,7 @@
               <li
                 v-for="ingredient in ingredientsToBuy"
                 :key="ingredient.name + ingredient.unit"
+                data-testid="ingredient"
               >
                 {{ ingredient.quantity }} {{ ingredient.unit }} -
                 {{ ingredient.name }}
@@ -44,7 +55,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { type Ingredient, type Cake } from "~/types";
 import { handleCopy, handlePrint } from "~/utils";
 
@@ -58,7 +69,9 @@ const ingredientsToBuy = computed(() => {
       const key = `${ingredient.name}-${ingredient.unit}`;
       const quantity = parseFloat(ingredient.quantity as unknown as string);
       if (ingredientMap.has(key)) {
-        ingredientMap.get(key)!.quantity += quantity;
+        const existingIngredient = ingredientMap.get(key)!;
+        existingIngredient.quantity =
+          (existingIngredient.quantity ?? 0) + quantity;
       } else {
         ingredientMap.set(key, { ...ingredient, quantity });
       }

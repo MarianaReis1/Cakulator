@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-h-fill tw-min-h-screen tw-text-white">
+  <div class="tw-flex tw-h-full tw-min-h-screen tw-text-white">
     <div
       class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-gap-14 tw-w-full tw-py-8 tw-px-5 tw-max-w-[640px] tw-mx-auto tw-md:w-1/2 md:tw-p-14"
     >
@@ -15,11 +15,7 @@
           need
         </h3>
       </div>
-      <div
-        class="tw-mt-auto tw-flex tw-flex-col tw-gap-3 tw-items-center tw-justify-center md:tw-gap-5"
-      >
-        <UtilsBtnPrimary href="/cakes">Add cake</UtilsBtnPrimary>
-
+      <div class="tw-mt-auto tw-flex tw-items-center tw-justify-center">
         <UtilsBtnSecondary href="/cakes">View my cakes</UtilsBtnSecondary>
       </div>
     </div>

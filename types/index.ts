@@ -2,7 +2,7 @@ export type Ingredient = {
     id: number;
     name: string;
     quantity?: number | null;
-    unit?: 'g' | 'ml' | 'l' | 'kg' |'';
+    unit?: string;
 };
 
 export type Cake = {

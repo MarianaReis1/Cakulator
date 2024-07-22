@@ -4,11 +4,9 @@ import { describe, it, expect, vi } from 'vitest';
 import { Quasar, QBtn, QDialog, QCard, QCardSection, QCardActions, QForm, QInput } from 'quasar';
 import AddNewCakeModal from './AddNewCakeModal.vue';
 import UtilsBtnPrimary from '~/components/utils/BtnPrimary.vue';
+import CustomInputsFormulaInput from '~/components/customInputs/FormulaInput.vue';
 
 const CustomInputsImage = {
-  template: '<div></div>'
-};
-const CustomInputsIngredients = {
   template: '<div></div>'
 };
 
@@ -17,7 +15,7 @@ describe('AddNewCakeModal.vue', () => {
     global: {
       plugins: [Quasar],
       components: {  QBtn, QDialog, QCard, QCardSection, QCardActions, QForm, QInput,
-        UtilsBtnPrimary, CustomInputsImage, CustomInputsIngredients },
+        UtilsBtnPrimary, CustomInputsFormulaInput, CustomInputsImage },
       mocks: {
         $q: {
           platform: {

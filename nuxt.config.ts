@@ -12,5 +12,10 @@ export default defineNuxtConfig({
       PlaywriteAT: [200],
       Georama: [100,200,300,400,500,600,700,800],
     }
+  },
+  runtimeConfig: {
+    public: {
+      showImageInput: false
+    }
   }
 })

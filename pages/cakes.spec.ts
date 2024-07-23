@@ -1,4 +1,3 @@
-import { ref } from 'vue';
 import { mount } from '@vue/test-utils';
 import { describe, it, expect, vi } from 'vitest';
 import CakesPage from '~/pages/cakes.vue';
